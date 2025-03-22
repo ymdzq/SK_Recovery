@@ -63,7 +63,7 @@ bool KernelModuleLoader::Load_Vendor_Modules() {
 #ifdef TW_XIAOMI_TOUCH_RMMOD_GOODIX_CORE
 	{
 		std::string result;
-		TWFunc::Exec_Cmd("rmmod goodix_core > /dev/null 2>&1", result, false);
+		TWFunc::Exec_Cmd("rmmod goodix_core && insmod /vendor/lib/modules/1.1/goodix_core.ko > /dev/null 2>&1", result, false);
 	}
 #endif
 
